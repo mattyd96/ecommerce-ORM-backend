@@ -58,7 +58,7 @@ node server.js
 if you would like to have some seed data to test, you can also run
 
 ```md
-node run seed
+npm run seed
 ```
 
 ### Routes available
