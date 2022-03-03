@@ -6,28 +6,38 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
-  const data = await Tag.findAll({
-    include: [{
-      model: Product,
-      required: true,
-    }]
-  });
-  res.json(data);
+  try {
+    const data = await Tag.findAll({
+      include: [{
+        model: Product,
+        required: true,
+      }]
+    });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  
 });
 
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
-  const data = await Tag.findAll({
-    include: [{
-      model: Product,
-      required: true,
-    }],
-    where: {
-      id: req.params.id
-    }
-  });
-  res.json(data);
+  try {
+    const data = await Tag.findAll({
+      include: [{
+        model: Product,
+        required: true,
+      }],
+      where: {
+        id: req.params.id
+      }
+    });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  
 });
 
 router.post('/', async (req, res) => {
