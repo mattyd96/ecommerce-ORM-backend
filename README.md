@@ -43,7 +43,7 @@ Connecting the database can be done by modifying the .env.EXAMPLE file to match 
 
 <br>
 
-Once Set up, just start with either
+Once Set up, start the application with one of the following commands
 
 ```md
 npm start
@@ -52,7 +52,13 @@ npm start
 or 
 
 ```md
-node index.js
+node server.js
+```
+
+if you would like to have some seed data to test, you can also run
+
+```md
+node run seed
 ```
 
 ### Routes available
